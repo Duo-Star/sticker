@@ -2,6 +2,11 @@
 
 共计 6503 个，2 GB
 
+收集这些干什么？
+
+1. ~~我闲的~~
+2. 有趣
+
 # 分卷浏览
 
 ---
@@ -44,3 +49,13 @@
 ### 卷七
 
 [浏览_07](src/_07/0.md)
+
+---
+
+### 涨知识环节
+
+```ps
+Get-ChildItem -Path . -File | Where-Object { $_.Extension -match "png|jpg|jpeg|gif" } | ForEach-Object { "![$($_.Name)]($($_.Name))" } | Out-File -FilePath "0.md" -Encoding utf8
+```
+
+用于将目录中的图片转为目标于同级目录输出 markdown 语法的图片链接，保存为 `0.md`
